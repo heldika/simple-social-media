@@ -11,6 +11,9 @@ chmod -R ug+rwx bootstrap storage || true
 
 npm install --legacy-peer-deps --no-audit --progress=false
 npm run dev
+composer config --no-plugins allow-plugins.dealerdirect/phpcodesniffer-composer-installer true || true
+
+composer config --no-plugins allow-plugins.pestphp/pest-plugin true || true
 composer install --optimize-autoloader --no-interaction --ignore-platform-reqs
 cp .env.example .env || true
 php artisan key:generate
